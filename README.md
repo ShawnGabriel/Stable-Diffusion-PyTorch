@@ -24,3 +24,9 @@ A model built by OpenAI that allowed to connect text with images. So in the CLIP
 We use this to compress the data, as we are not learning the distribution p(x) of our data set of images, but rather, a latent version of it. Hence, the name Stable Diffusion/Latent Diffusion. A Diffusion model is a model that progressively corrupts the data by adding noise and learns to reverse this process to generate new data from pure noise. A traditional autoencoder doesn't give semantic relationships between the data encoded and its vector representations.
 
 Instead of a vector as per the traditional autoencoder, VAE encodes the data into two vectors representing the mean and the variance of a probability distribution that defines a latent space. That way, when training is initially started, a random initialization is chosen, but through the reconstruction loss and KL divergence, it will correct the data to which most represents our original data AND is able to generate new samples that have some resemblance to the original data.
+
+It samples through the reparameterization trick, where the initialization of z involves epsilon, an additional variable that introduces stochasticity. This is shown as:
+z = μ + σ ⊙ ε
+
+Last thing I would like to address, how does the encoder compress the whole image into the normal distribution in the first place?
+It does that by capturing meaningful features of the image, which is segmented into separate latent dimensions. Each dimension will then hold a distinctive feature of the image, such as lighting, smile, head tilt, etc. After initializing the categories of the latent dimensions, training occurs through random initializations of epsilon and the parameters mu and sigma are updated according to the reconstruction loss and KL divergence.
