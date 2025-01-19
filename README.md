@@ -1,5 +1,5 @@
 # Stable Diffusion from Scratch using PyTorch
 
-This repo is a reimplementation of the paper "High-Resolution Image Synthesis with Latent Diffusion Models".
+This repo is a reimplementation of the paper _"High-Resolution Image Synthesis with Latent Diffusion Models"_ by Rombach and others.
 
 
