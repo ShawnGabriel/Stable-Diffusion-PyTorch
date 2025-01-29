@@ -35,7 +35,7 @@ class CLIPLayer(nn.Module):
         
         residue = x
         
-        ## SELF ATTENTIOIN
+        ## SELF ATTENTION
         
         x = self.layernorm_1(x)
         
